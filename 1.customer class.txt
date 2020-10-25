@@ -1,0 +1,53 @@
+class Customer {
+	int id;
+	public int vehiclesize;
+	public String VehicleType;
+	public String typeofspot;
+	Scanner sc = new Scanner(System.in);
+
+	Customer(int id, String vehicletype) {
+		this.id = id;
+		this.VehicleType = vehicletype;
+		setvehiclesize();
+		setspotType();
+	}
+
+	public String getVehicletype() {
+		return this.VehicleType;
+	}
+
+	public int getid() {
+		return this.id;
+	}
+
+	public void setvehiclesize() {
+		if (getVehicletype().equals("motorcycle"))
+			this.vehiclesize = 1;
+		if (getVehicletype().equals("car"))
+			this.vehiclesize = 2;
+		if (getVehicletype().equals("truck"))
+			this.vehiclesize = 3;
+		// return this.vehiclesize;
+	}
+
+	public void setspotType() {
+		if (this.vehiclesize == 1)
+			this.typeofspot = "small";
+		if (this.vehiclesize == 2)
+			this.typeofspot = "compact";
+		if (this.vehiclesize == 3)
+			this.typeofspot = "large";
+	}
+
+	public int getvehiclesize() {
+		return this.vehiclesize;
+	}
+
+	private long hours;
+
+	public long gettime() {
+		Scanner sc = new Scanner(System.in);
+		this.hours = sc.nextLong();
+		return this.hours;
+	}
+}

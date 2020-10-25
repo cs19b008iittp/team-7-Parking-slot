@@ -1,0 +1,123 @@
+class Floor {
+	public ArrayList<Spot> pl = new ArrayList<Spot>(15);
+	public ArrayList<Customer> cl = new ArrayList<Customer>();
+	public Spot[] p;
+	private int allotedspot;
+
+	// private String typeofspot;
+	public Floor() {
+		this.p = new Spot[15];
+		for (int i = 0; i < 15; i++) {
+			// pl.add(new Spot(i+1,false));
+			if (i >= 0 && i < 3)
+				this.p[i] = new Spot(i + 1, false, "small");
+			if (i >= 3 && i < 5)
+				this.p[i] = new Spot(i + 1, true, "small");
+			if (i >= 5 && i < 8)
+				this.p[i] = new Spot(i + 1, false, "compact");
+			if (i >= 8 && i < 10)
+				this.p[i] = new Spot(i + 1, true, "compact");
+			if (i >= 10 && i < 13)
+				this.p[i] = new Spot(i + 1, false, "large");
+			if (i >= 13 && i < 15)
+				this.p[i] = new Spot(i + 1, true, "large");
+		}
+
+	}
+
+	// let a floor contains 15 spots
+	Spot[] getAvailablespots() {
+		for (int i = 0; i < 15; i++) {
+			if (!p[i].isReserved()) {
+				this.pl.add(p[i]);
+			}
+		}
+		return this.pl.toArray(new Spot[0]);
+	}
+
+	public Spot[] getallspots() {
+		return p;
+	}
+
+	int display(int fno) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Are you a new customer(enter 1) or leaving customer(enter 2) ");
+		int opt = sc.nextInt();
+		// System.out.println("enter vehicletype");
+		// String vehicletype=sc.nextLine();
+		if (opt == 1) {
+			System.out.println("enter vehicletype");
+			String vehicletype = sc.next();
+			Customer c = new Customer(-1, vehicletype);
+			System.out.println("Is your vehicle electrical(true/false)?");
+			boolean ele = sc.nextBoolean();
+			for (int j = 0; j < 5; j++) {
+				System.out.println("on floor " + (j + 1) + " :");
+
+				for (int k = 0; k < 15; k++) {
+					if (!p[k].isReserved()) {
+						if (p[k].isElectric()) {
+							System.out.println("spot is available at spot number " + (k + 1) + "  which is electrical "
+									+ " and " + p[k].getspotType());
+						} else {
+							System.out.println(
+									"spot is available at spot number " + (k + 1) + "  and  " + p[k].getspotType());
+						}
+					}
+				}
+			}
+
+			int i = 0;
+			for (i = 0; i < 15; i++) {
+				if (!p[i].isReserved() && p[i].getspotType().equals(c.typeofspot) && p[i].isElectric() == ele) {
+					c.id = i;
+					System.out.println("on the floor " +(fno+1) + " you can go to " + (i + 1) + " spot");
+					cl.add(c);
+					this.p[i].isReserved = true;
+					return 0;
+				}
+			}
+			return 1;
+		}
+
+		if (opt == 2) {
+			System.out.println("tell us ur spot number that we have assigned:");
+			int id = sc.nextInt();
+			p[id].isReserved = false;
+			System.out.println("We have 3 exits");
+			int hours;
+			long bill = 0;
+			System.out.println("enter no. of hours the vehicle is parked");
+			hours = sc.nextInt();
+			if (!p[id].isElectric()) {
+				if (hours <= 1) {
+					bill = hours * 20;
+				} else if (hours > 1 && hours <= 3) {
+					bill = 20 + (hours - 1) * 10;
+				} else if (hours > 3) {
+					bill = 40 + (hours - 3) * 5;// (20+ 10 + 10 )
+				} else
+					System.out.println("wrong values of hours");
+				System.out.println("it is parked for" + hours + " hours");
+				System.out.println("Total amount to be paid is Rs." + bill);
+			} 
+			if(p[id].isElectric()){
+				
+				if (hours <= 1) {
+					bill = hours * (20 + 10);// extra 10 rupees for electric charge
+				} else if (hours > 1 && hours <= 3) {
+					bill = (20 + 10) + (hours - 1) * (10 + 10);
+				} else if (hours > 3) {
+					bill = (40 + 10) + (hours - 3) * (5 + 10);// (20+ 10 + 10 ) and (5+10) extra 10 for electric charge
+					//System.out.println("it is parked for" + hours + " hours");
+					//System.out.println("Total amount to be paid is Rs." + bill);
+				}
+				System.out.println("it is parked for" + hours + " hours");
+				System.out.println("Total amount to be paid is Rs." + bill);
+
+			}
+			return 0;
+		} // use payment thing.
+		return 0;
+	}
+}

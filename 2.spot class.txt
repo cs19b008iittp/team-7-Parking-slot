@@ -1,0 +1,66 @@
+class Ticket {
+	public int challan = 0;
+
+	void ticket() {
+		this.challan++;
+	}
+}
+
+class Spot {
+	public int value = 1;
+	private int spotNo;
+	private boolean isElectric;
+	public boolean isReserved;
+	public int vehiclesize;
+	public String typeofspot;
+
+	public Spot(int spotNo, boolean isElectric, String typeofspot) {
+		this.spotNo = spotNo;
+		this.isElectric = isElectric;
+		this.isReserved = false;
+		this.typeofspot = typeofspot;
+
+	}
+
+	public int getSpotNo() {
+		return this.spotNo;
+	}
+
+	public boolean isElectric() {
+		return this.isElectric;
+	}
+
+	public void setElectric(boolean status) {
+		this.isElectric = status;
+	}
+
+	public boolean isReserved() {
+		return this.isReserved;
+	}
+
+	public void setReservedStatus(boolean status) {
+		this.isReserved = status;
+	}
+	public void setvehiclesize() {
+		if (getspotType().equals("motorcycle"))
+			this.vehiclesize = 1;
+		if (getspotType().equals("car"))
+			this.vehiclesize = 2;
+		if (getspotType().equals("truck"))
+			this.vehiclesize = 3;
+		// return this.vehiclesize;
+	}
+
+	public void setspotType() {
+		if (this.vehiclesize == 1)
+			this.typeofspot = "small";
+		if (this.vehiclesize == 2)
+			this.typeofspot = "compact";
+		if (this.vehiclesize == 3)
+			this.typeofspot = "large";
+	}
+
+	public String getspotType() {
+		return this.typeofspot;
+	}
+}
