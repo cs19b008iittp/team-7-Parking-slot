@@ -1,8 +1,8 @@
 # team-7-Parking-slot
 case study-1 team 7 : Teeam members
-.CS19B004-GREESHMITHA : contributed on working out floor, customer ,and spots classes
+.CS19B004-GREESHMITHA : contributed on working out floor, customer ,and spots classes,integrated code 
 .CS19B021 -HARSHITHA :contributed on working out display board method (displaying the no. free spots in each floor)
-.CS19B008 -ROOPA SREE : contributed on working out farecontroller , entry and exit panels classes
+.CS19B008 -ROOPA SREE : contributed on working out farecontroller , and mode of payment methods(cash or credit)
 .CS19BO33-SANDEEP : contributed nothing
 CS19B032 -CHARAN  : contributed in giving ideas 
 -> description of each class 
@@ -17,6 +17,8 @@ CS19B032 -CHARAN  : contributed in giving ideas
                               *here we calculate the bill based on number of hurs the vehicle has been 
                                    Parked ,and we if the vehicle type is electrical we consider an extra fare 
                                 Of  rupees 10 or electricharge that is included in bill.
+                              *here  we also give facility to the customer to pay bill either through cash or by credit 
+                              *if mode of payment is credit then we check credir card number is valid or  not if it is valid we return successful transaction. 
 4. Floor      :             . *we divide the each floor into 15 spots (5 small , 5 compact , 5 large)
                              *we consider 2 cases for the display method : 1.incoming (here if customer 
                               Wants to park his vehicle we will allot a nearest slot to him)
