@@ -35,3 +35,5 @@ classes description
 7.	We had 2 meetings extra other than the discussion during lab hours to sort out the things
 8. running the program : .*open the parkingslot_wholeprogram.txt file .
                            *it is already verified in eclipse ide so just copy paste the code and run the main method  in any text editor 
+                            *we have also  submitted the various classes as .txt files so incase of any doubts or any verification refer the seperate the classes submitted for 
+                            more clarity .
