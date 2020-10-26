@@ -1,0 +1,94 @@
+package PARKING;
+
+import java.util.Scanner;
+
+public class farecontroller {
+	Scanner scan =new Scanner(System.in);
+	  int num,i=0,sum=0,sum1=0;
+	  double hours;
+	  double bill;
+	  String str,credit;
+          String vehicle_type;
+	//private int hours;
+	  void input()
+	  {
+	    System.out.println("enter your vehicle type :");
+	    vehicle_type=scan.next();
+	    System.out.println(" no. of hours the vehicle is parked");
+	   // tot_hours=(super.hours*60+super.minutes)/60.0;
+	   hours=scan.nextInt();
+	  }
+	 void calculate() 
+	  {
+		 if(vehicle_type=="electric")
+		 {
+	    if(hours<=1)
+	    {
+	      bill= hours*(20+10);//extra 10 rupees for electric charge
+	    }
+	    else if( hours>1&& hours<=3)
+	    {
+	      bill=(20+10) +( hours-1)*(10+10);
+	    }
+	    else if( hours>3)
+	    {
+	      bill= (40+10) +( hours-3)*(5+10);//(20+ 10 + 10 ) and (5+10) extra 10 for electric charge
+	    }
+		 }
+	    else if(vehicle_type=="car"||vehicle_type=="truck"||vehicle_type=="motorbike"||vehicle_type=="van")
+	    {
+	    	 if(hours<=1)
+	 	    {
+	 	      bill= hours*(20+10);//extra 10 rupees for electric charge
+	 	    }
+	 	    else if( hours>1&& hours<=3)
+	 	    {
+	 	      bill=(20+10) +( hours-1)*(10+10);
+	 	    }
+	 	    else if( hours>3)
+	 	    {
+	 	      bill= (40+10) +( tot_hours-3)*(5+10);//(20+ 10 + 10 )
+	 	    }
+	    }
+	    else
+	    System.out.println("wrong values of hours");
+	 }
+	 void display()
+	  {
+	    System.out.println("vehicle number is " + num);
+	    System.out.println("it is parked for" +hours + " hours");
+	    System.out.println("Total amount to be paid is Rs." +bill);
+	  }
+	  void cashpayment()
+	 {
+	   System.out.println("enter the type of payment you want to pay  either credit or by cash");
+	     str=scan.next();
+	     if(str==credit)
+	     {
+	       System.out.println("enter your credit card number:");
+	       Credit=scan.next();
+	       for(i=0;i<Credit.length();i++)
+	       {
+	         sum=sum+str.charAt(i);
+	        }
+	       for(i=0;i<Credit.length();i++)
+	      {
+	         if(i%2!=0)
+	         {
+	           sum1=sum1+Credit.charAt(i);
+	         }
+	      }
+	     if((sum+sum1)%10==0)
+	     {
+	       System.out.println("your credit card number is valid");
+	       System.out.println("an amount of Rs" + bill + " is deducted from your account");
+	       System.out.println("transaction successfull");
+	     }
+	    else 
+	    System.out.println("your credit card number is not valid try again");
+	  }
+	  if(str== "cash")
+	  System.out.println("an amount of Rs"+ bill+ " is to be be paid ");
+	}
+
+}
