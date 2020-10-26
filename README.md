@@ -14,16 +14,10 @@ CS19B032 -CHARAN  : contributed in giving ideas
                             .assign a ticket to customer
 2.	 Spot      :            .set reserved status
                              .return spotsize and spotype 
-3.	Farecontoller:           *this is implemeted in loor class and this is displayed when the vehicle is about to exit.
+3.	Farecontoller:           *this is implemeted in floor class and this is displayed when the vehicle is about to exit.
                               *here we calculate the bill based on number of hurs the vehicle has been 
                                    Parked ,and we if the vehicle type is electrical we consider an extra fare 
-                            Of  rupees 10 or electricharge that is included in bill.
-                             * we display the bill and we also provide the mode of payment like through 
-                              Cash or even through credit card .
-                             *in case of credit card we check whether the entered creit card is valid or not 
-                             And return successful transaction incase of valid transaction or else it will 
-                             Return try again , in case of cash it will show like this much of amount of bill is 
-                            To be paid.
+                                Of  rupees 10 or electricharge that is included in bill.
 4. Floor      :             . *we divide the each floor into 15 spots (5 small , 5 compact , 5 large)
                              *we consider 2 cases for the display method : 1.incoming (here if customer 
                               Wants to park his vehicle we will allot a nearest slot to him)
