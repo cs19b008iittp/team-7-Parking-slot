@@ -6,7 +6,6 @@ case study-1 team 7 : Teeam members
 .CS19BO33-SANDEEP : contributed nothing
 CS19B032 -CHARAN  : contributed in giving ideas 
 -> description of each class 
-  classes description.
 1.	  Customer :           .customer id
                            .set vehicle size
                             .set spottype
@@ -24,7 +23,7 @@ CS19B032 -CHARAN  : contributed in giving ideas
                               2.outgoing (if customer wants to leave then we will mark the place reserved 
                                 For him as free for allocation for the next coming customers)
                               *display bill
-                              * display number of free spots in each floor.
+                              * display number of free spots in each floor.                             
 5.	So this the basic layout of our program we have discussed all the possibilities and worked it out.
 6.	We had 2 meetings extra other than the discussion during lab hours to sort out the things
 7. running the program : .*open the parkingslot_wholeprogram.txt file .
