@@ -2,7 +2,7 @@
 case study-1 team 7 : Teeam members
 .CS19B004-GREESHMITHA : contributed on working out floor, customer ,and spots classes
 .CS19B021 -HARSHITHA :contributed on working out display board method (displaying the no. free spots in each floor)
-.CS19B008 -ROOPA SREE : contributed on working out farecontroller , entry and exit pnels classes
+.CS19B008 -ROOPA SREE : contributed on working out farecontroller , entry and exit panels classes
 .CS19BO33-SANDEEP : contributed nothing
 -> description of each class 
 classes description
@@ -33,4 +33,5 @@ classes description
                     reviews.
 6.	So this the basic layout of our program we have discussed all the possibilities and worked it out.
 7.	We had 2 meetings extra other than the discussion during lab hours to sort out the things
-
+8. running the program : .*open the parkingslot_wholeprogram.txt file .
+                           *it is already verified in eclipse ide so just copy paste the code and run the main method  in any text editor 
