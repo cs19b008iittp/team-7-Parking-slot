@@ -4,7 +4,7 @@ case study-1 team 7 : Teeam members
 .CS19B021 -HARSHITHA :contributed on working out display board method (displaying the no. free spots in each floor)
 .CS19B008 -ROOPA SREE : contributed on working out farecontroller , and mode of payment methods(cash or credit)
 .CS19BO33-SANDEEP : contributed nothing
-CS19B032 -CHARAN  : contributed in giving ideas 
+CS19B032 -CHARAN  : contributed in working out on booking slot method.
 -> description of each class 
 1.	  Customer :           .customer id
                            .set vehicle size
